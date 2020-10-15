@@ -11,5 +11,9 @@ export class PagarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  pagar(notarjeta,Nombretarjeta,Fechaexpiración,Codigoverificador,Montoapagar,Moneda){
 
+    throw new Error('fallo pago')
+
+  }
 }
