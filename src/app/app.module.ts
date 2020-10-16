@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagarComponent } from './pagar/pagar.component';
+import { ListadoComponent } from './listado/listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagarComponent
+    PagarComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
