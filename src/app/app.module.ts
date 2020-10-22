@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagarComponent } from './pagar/pagar.component';
@@ -9,6 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {MatInputModule} from '@angular/material/input';
+import { MatCardModule} from "@angular/material/Card";
+
+import { MatListModule} from "@angular/material/List";
+import { MatButtonModule} from "@angular/material/Button";
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import {MatInputModule} from '@angular/material/input';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatListModule,
+    MatCardModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
