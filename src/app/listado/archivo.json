@@ -1,0 +1,19 @@
+{
+         "Regalo1": {
+			"name": "Tarjeta 1",
+			"id": "500",
+			"numero": "50",
+			"expiraciondate": "6/09/2019",
+			"code": "6.77"
+
+        },
+         "Regalo2": {
+			"name": "Tarjeta 1",
+			"id": "500",
+			"numero": "50",
+			"expiraciondate": "6/09/2019",
+			"code": "6.77"
+
+        }
+    
+}

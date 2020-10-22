@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// import { System } from 'system';
+import {HttpClient} from "@angular/common/http";
+// import { PagarComponent } from './../pagar/pagar.component';
 
 @Component({
   selector: 'app-listado',
@@ -7,11 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
+  
+  retorno_objecto(){
+    return this.http.get('./../listado/archivo.json');
+
+  }
 
   elegir(idregalo,idusuario,number,nombre,fechaexp){
 
