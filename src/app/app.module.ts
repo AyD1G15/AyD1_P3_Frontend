@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagarComponent } from './pagar/pagar.component';
 import { ListadoComponent } from './listado/listado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,9 @@ import { ListadoComponent } from './listado/listado.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
