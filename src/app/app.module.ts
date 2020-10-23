@@ -9,18 +9,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {MatInputModule} from '@angular/material/input';
+import { RegistroComponent } from './registro/registro.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagarComponent,
-    ListadoComponent
+    ListadoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
