@@ -1,40 +1,50 @@
+<div  *ngFor="let regalo of regalos">
 
-<mat-list class="example-card" role="list">
-    <div  *ngFor="let regalo of regalos">
-       <mat-card class="example-card" (click)="navegar(pregunta._id)">
-         
-         <mat-card-header>
-            <!--<div mat-card-avatar class="example-header-image"></div>-->
-            <mat-card-subtitle>{{regalo.id}}</mat-card-subtitle>
-            <mat-card-title>{{regalo.name}}</mat-card-title>
-            <!--<mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
-          </mat-card-header>
+<div class="content">
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>{{regalo.id}}.{{regalo.name}}</mat-card-title>
+    </mat-card-header>
 
-          <img mat-card-avatar alt="Angular Logo" src="{{regalo.image}}" 
-         
-          >
+    <table  >
+      <tr>
+        <td>
+          <img mat-card-avatar class="espaciado" alt="Angular Logo" src="{{regalo.image}}" >
+          <mat-card-title><div class="fam8" >chargeRate:{{regalo.chargeRate}}</div></mat-card-title>
+          <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
 
-
+        </td>
+         <td class="espaciad"  >
           <mat-card-content>
-            <div [innerHTML]="regalo.descripcion"></div>
-             <!--<p>
-               {{pregunta.descripcion}}
-             </p>-->
-           </mat-card-content>
-           <mat-card-actions>
-         <!--     <button mat-button><mat-icon>visibility</mat-icon> {{regalo.chargeRate}} chargeRate</button>
-             <button mat-button><mat-icon>comment_bank</mat-icon> {{regalo.active}} active</button>
-            -->
-             <mat-card-title><div class="fam8" >chargeRate:{{regalo.chargeRate}}</div></mat-card-title>
-             <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
+            <p>   <li class="espaciad"  *ngFor="let user of regalo.availability; index as i; first as isFirst">
+            
+              <mat-card-actions>
+               
+                <button class="espaciad" mat-button>id:{{user.id}}</button> <button mat-button>total:{{user.total}}</button>
+             
+              </mat-card-actions>
+      <!-- 
+              <mat-card-title><div class="fam8" >id:{{user.id}}</div></mat-card-title>
+              <mat-card-title><div class="fam8" >total:{{user.total}}</div></mat-card-title>
+       -->
+             </li>
+            </p>
+          </mat-card-content>
+        </td>
+      </tr>
+    </table>
+  <!--   <img mat-card-image src="{{regalo.image}}"/> -->
 
-            </mat-card-actions>
-            <button class="bordeado" (click)="eliminar()"  mat-raised-button color="warn">Comprar</button>
+   
+    <mat-card-actions>
+      <button class="bordeado" (click)="Comprar(regalo.id)"  mat-raised-button color="warn">Comprar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+</div>
 
 
-      </mat-card><br>
-       </div>     
-   </mat-list>
   
 
 <!--    1100b5a_progressive.jpg","chargeRate":1,"active":true,"availability":[{"id":1,"total":"10"},{"id":2,"total":"25"},{"id":3,"total":"50"},{"id":4,"total":"100"}]},{"id":"2","name":"PlayStation","image":"https://www.allkeyshop.com/blog/wp-content/uploads/PlayStationNetworkGiftCard.jpg","chargeRate":0.25,"active":true,

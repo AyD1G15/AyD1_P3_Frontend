@@ -45,5 +45,14 @@ export class ListadoComponent implements OnInit {
   }
 
 
+  Comprar(regaloid){
+
+   // this.servicio.message("el id es "+regaloid,"success")
+
+    this.servicio.navegar('pagar');
+
+  }
+
+
 
 }

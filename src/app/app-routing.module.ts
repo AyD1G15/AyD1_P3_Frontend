@@ -4,7 +4,7 @@ import {ListadoComponent} from '../app/listado/listado.component';
 import { PagarComponent } from '../app/pagar/pagar.component';
 
 const routes: Routes = [
-
+  {path: 'pagar', component: PagarComponent},
   {path: 'listado', component: ListadoComponent},
   {path: '', component: ListadoComponent},
 
