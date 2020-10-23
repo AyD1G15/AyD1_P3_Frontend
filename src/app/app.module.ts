@@ -9,18 +9,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {MatInputModule} from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
+
+import { MaterialModule } from './material.module ';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagarComponent,
-    ListadoComponent
+    ListadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
