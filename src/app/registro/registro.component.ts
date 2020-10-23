@@ -73,4 +73,18 @@ export class RegistroComponent implements OnInit {
 
   }
 
+  crear(){
+    let UserName=this.loginform.controls['userNameFormControl'].value;
+    let email=this.loginform.controls['emailFormControl'].value;
+    let pass=this.loginform.controls['passFormControl'].value;
+    let nombre=this.loginform.controls['NameFormControl'].value;
+    let apellido=this.loginform.controls['apellidoFormControl'].value;
+    let dpi=this.loginform.controls['dpiFormControl'].value;
+    let fecha=this.loginform.controls['fechaFormControl'].value;
+    let edad=this.loginform.controls['edadFormControl'].value;
+
+    const jsonData={username:UserName,email:email,password:pass,names:nombre,lasNames:apellido,DPI:dpi,birthDate:fecha,age:edad}
+    console.log(jsonData);
+  }
+
 }
