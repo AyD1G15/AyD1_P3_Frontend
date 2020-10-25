@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:10-stretch'
+      image 'zenika/alpine-chrome:86-with-node-12'
     }
 
   }
