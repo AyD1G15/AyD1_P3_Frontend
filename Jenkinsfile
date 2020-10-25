@@ -14,7 +14,7 @@ pipeline {
 
     stage('unit testing') {
       steps {
-        sh 'npm t'
+        sh 'npm run test:ci'
       }
     }
 
