@@ -56,7 +56,7 @@ export class RegistroComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(private fb: FormBuilder,private servicio:ServicioService) { }
+  constructor(private fb: FormBuilder,private servicio:ServicioService,private router:Router) { }
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -93,6 +93,7 @@ export class RegistroComponent implements OnInit {
       let aux:any=data;
       if (aux.mensaje=='Usuario registrado correctamente') {
         this.servicio.message(aux.mensaje,'success');
+        this.router.navigate(['/login']);
       } else {
         this.servicio.message(aux.mensaje,'error');
       }

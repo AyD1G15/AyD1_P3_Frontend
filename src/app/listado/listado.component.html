@@ -1,21 +1,32 @@
 <div  *ngFor="let regalo of regalos">
 
 <div class="content">
-  <mat-card class="mat-elevation-z4">
+  <mat-card class="box">
     <mat-card-header>
       <mat-card-title>{{regalo.id}}.{{regalo.name}}</mat-card-title>
     </mat-card-header>
+    <mat-card-content>
+      <img  alt="Angular Logo" style="height: 150px; width: 150px;" src="{{regalo.image}}" >
+      <mat-card-title><div class="fam8" >chargeRate:{{regalo.chargeRate}}</div></mat-card-title>
+      <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
 
-    <table  >
+      <mat-selection-list #user [multiple]="false">
+        <mat-list-option *ngFor="let user of regalo.availability; index as i; first as isFirst" [value]="user.id">
+          id:{{user.id}} total:{{user.total}}
+        </mat-list-option>
+      </mat-selection-list>
+      
+      <p>
+        Option selected: {{user.selectedOptions.selected[0]?.value}}
+      </p>
+
+    <!--<table  >
       <tr>
         <td>
-          <img mat-card-avatar class="espaciado" alt="Angular Logo" src="{{regalo.image}}" >
-          <mat-card-title><div class="fam8" >chargeRate:{{regalo.chargeRate}}</div></mat-card-title>
-          <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
-
+         
         </td>
          <td class="espaciad"  >
-          <mat-card-content>
+        
             <p>   <li class="espaciad"  *ngFor="let user of regalo.availability; index as i; first as isFirst">
             
               <mat-card-actions>
@@ -23,19 +34,16 @@
                 <button class="espaciad" mat-button>id:{{user.id}}</button> <button mat-button>total:{{user.total}}</button>
              
               </mat-card-actions>
-      <!-- 
-              <mat-card-title><div class="fam8" >id:{{user.id}}</div></mat-card-title>
-              <mat-card-title><div class="fam8" >total:{{user.total}}</div></mat-card-title>
-       -->
+
              </li>
             </p>
-          </mat-card-content>
+          
         </td>
       </tr>
-    </table>
+    </table>-->
   <!--   <img mat-card-image src="{{regalo.image}}"/> -->
 
-   
+      </mat-card-content>
     <mat-card-actions>
       <button class="bordeado" (click)="Comprar(regalo.id)"  mat-raised-button color="warn">Comprar</button>
     </mat-card-actions>

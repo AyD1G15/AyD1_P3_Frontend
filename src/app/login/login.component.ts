@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(private fb: FormBuilder,private servicio:ServicioService) { }
+  constructor(private fb: FormBuilder,private servicio:ServicioService,private router:Router) { }
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
    
       this.servicio.postLogin(jsonData).subscribe(data=>{
         console.log('la api me respondio ',data);
+        this.router.navigate(['/listado']);
       },err=>{
         this.servicio.message('credenciales incorrectas','error');
       })
