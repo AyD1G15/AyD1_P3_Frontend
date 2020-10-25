@@ -7,12 +7,14 @@ import { PagarComponent } from './pagar/pagar.component';
 import { ListadoComponent } from './listado/listado.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormsModule } from '@angular/forms';
 
 import {MatInputModule} from '@angular/material/input';
 import { MatCardModule} from "@angular/material/Card";
 
 import { MatListModule} from "@angular/material/List";
 import { MatButtonModule} from "@angular/material/Button";
+// import { ionic-numberpicker} from "@angular/material/Button";
 
 
 
@@ -30,7 +32,8 @@ import { MatButtonModule} from "@angular/material/Button";
     HttpClientModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
 
   ],
   providers: [],

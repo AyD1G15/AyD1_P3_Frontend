@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing'; 
-
+// import {ServicioService} from '../servicio.service';
 import { ListadoComponent } from './listado.component';
 
 describe('ListadoComponent', () => {
@@ -15,7 +15,7 @@ describe('ListadoComponent', () => {
       
 
         // MatPaginator, MatSort
-      ],
+      ]
     })
     .compileComponents();
   });
@@ -76,6 +76,20 @@ describe('ListadoComponent', () => {
       } ).toThrow(new Error("fallo seleccion de regalo"));
 
   });
+
+  it('se espera que el numero de regalos sea valido', () => {
+    expect( function(){ 
+
+
+      let noregalo="77u"
+     
+       component.cupones(noregalo); 
+      
+      } ).toEqual('false');
+
+  });
+
+
 
 
   it('probar que la respuesta de json es igual al test de muestra', () => {

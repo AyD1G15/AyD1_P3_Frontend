@@ -1,3 +1,5 @@
+
+
 <div  *ngFor="let regalo of regalos">
 
 <div class="content">
@@ -11,24 +13,40 @@
         <td>
           <img mat-card-avatar class="espaciado" alt="Angular Logo" src="{{regalo.image}}" >
           <mat-card-title><div class="fam8" >chargeRate:{{regalo.chargeRate}}</div></mat-card-title>
-          <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
+          <mat-card-title><div class="fam8" >active: {{regalo.active}}</div></mat-card-title>
+          <div>
+          Cantidad:  <input name="cantidad" [(ngModel)]="cantidad" >
+          </div>
 
+          
         </td>
          <td class="espaciad"  >
           <mat-card-content>
-            <p>   <li class="espaciad"  *ngFor="let user of regalo.availability; index as i; first as isFirst">
+
+            <form class="go-right">
+
+              <mat-form-field  appearance="fill">
+            
+                <select matNativeControl [(ngModel)]="card1"  name="card1"   required>
+                  <option *ngFor="let item of dataSource" >
+                    id:{{ item.id }} - total:{{ item.existencia }}
+                  </option>
+                </select>
+              </mat-form-field>
+            </form>
+            
+            <p> <!--   <li class="espaciad"  *ngFor="let user of regalo.availability; index as i; first as isFirst">
             
               <mat-card-actions>
                
                 <button class="espaciad" mat-button>id:{{user.id}}</button> <button mat-button>total:{{user.total}}</button>
              
               </mat-card-actions>
-      <!-- 
-              <mat-card-title><div class="fam8" >id:{{user.id}}</div></mat-card-title>
-              <mat-card-title><div class="fam8" >total:{{user.total}}</div></mat-card-title>
-       -->
-             </li>
+    
+             </li> -->
             </p>
+
+
           </mat-card-content>
         </td>
       </tr>
