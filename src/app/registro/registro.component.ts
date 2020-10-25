@@ -4,6 +4,7 @@ import {FormControl,FormGroup, FormGroupDirective, NgForm, Validators,FormBuilde
 import {ErrorStateMatcher} from '@angular/material/core';
 //import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import {ServicioService} from '../servicio.service'
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -55,7 +56,7 @@ export class RegistroComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private servicio:ServicioService) { }
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -82,9 +83,20 @@ export class RegistroComponent implements OnInit {
     let dpi=this.loginform.controls['dpiFormControl'].value;
     let fecha=this.loginform.controls['fechaFormControl'].value;
     let edad=this.loginform.controls['edadFormControl'].value;
+    let mes=fecha._i.month+1;
+    let fechaAux=fecha._i.year+'-'+mes+'-'+fecha._i.date;
 
-    const jsonData={username:UserName,email:email,password:pass,names:nombre,lasNames:apellido,DPI:dpi,birthDate:fecha,age:edad}
+    const jsonData={username:UserName,nombre:nombre,apellido:apellido,password:pass,correo:email,dpi:dpi,edad:edad,fechaNacimiento:fechaAux,}
     console.log(jsonData);
+    this.servicio.postUser(jsonData).subscribe(data=>{
+      console.log('la respuesta del api es ',data);
+      let aux:any=data;
+      if (aux.mensaje=='Usuario registrado correctamente') {
+        this.servicio.message(aux.mensaje,'success');
+      } else {
+        this.servicio.message(aux.mensaje,'error');
+      }
+    })
   }
 
 }

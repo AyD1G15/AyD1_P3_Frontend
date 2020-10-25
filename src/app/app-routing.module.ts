@@ -4,6 +4,7 @@ import { ListadoComponent } from './listado/listado.component';
 import { PagarComponent } from './pagar/pagar.component';
 import { RegistroComponent } from './registro/registro.component';
 
+
 const routes: Routes = [
   {path:'listado',component:ListadoComponent},
   {path:'pagar',component:PagarComponent},
