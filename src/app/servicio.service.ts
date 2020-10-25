@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 })
 export class ServicioService {
 
+  
   constructor(private router:Router,private http: HttpClient) { }
 
   getDataget(name){
@@ -20,6 +21,10 @@ export class ServicioService {
 
     
   }
+
+  postUser(form){
+    return this.http.post(this.get_domain()+'/registro',form)
+}
   message(a,type) { 
 
     Swal.fire({

@@ -14,13 +14,31 @@ import { MatCardModule} from "@angular/material/Card";
 import { MatListModule} from "@angular/material/List";
 import { MatButtonModule} from "@angular/material/Button";
 
+import { RegistroComponent } from './registro/registro.component';
+import { MaterialModule } from './material.module';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+
+
+export const DateFormats = {
+  parse: {
+      dateInput: ['YYYY-MM-DD']
+  },
+  display: {
+      dateInput: 'YYYY-MM-DD',
+      monthYearLabel: 'MMMM YYYY',
+      dateA11yLabel: 'LL',
+      monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PagarComponent,
-    ListadoComponent
+    ListadoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +48,15 @@ import { MatButtonModule} from "@angular/material/Button";
     HttpClientModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
 
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: DateFormats }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

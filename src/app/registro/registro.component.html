@@ -1,0 +1,95 @@
+<div class="padre">
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    
+        <mat-card class="box">
+          <mat-card-header>
+            <md-card-avatar>
+              
+              <img src="https://img.icons8.com/bubbles/100/000000/login-rounded-right.png" class="md-user-avatar"/>
+            </md-card-avatar>
+            <mat-card-title>Log in</mat-card-title>
+          </mat-card-header>
+      
+          <form [formGroup]="loginform"  class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                <input matInput id="userNameFormControl" formControlName="userNameFormControl" placeholder="Nombre de Usuario">
+             
+                <mat-error *ngIf="userNameFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong>
+                </mat-error>
+    
+                
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="emailFormControl" formControlName="emailFormControl" placeholder="email">
+             
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong> o <strong>no valido</strong> 
+                </mat-error>
+    
+                
+              </mat-form-field>
+      
+              <mat-form-field class="example-full-width">
+                <input id="passFormControl" formControlName="passFormControl" type="password" matInput placeholder="Password">
+              
+                <mat-error *ngIf="passFormControl.hasError('required')">
+                  <strong>La contraseña debe tener  8 o mas caracteres</strong>
+                </mat-error>
+    
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="NameFormControl" formControlName="NameFormControl" placeholder="Nombre">
+             
+                <mat-error *ngIf="NameFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong>
+                </mat-error>
+    
+                
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="apellidoFormControl" formControlName="apellidoFormControl" placeholder="Apellido">
+             
+                <mat-error *ngIf="apellidoFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong>
+                </mat-error>
+    
+                
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="dpiFormControl" formControlName="dpiFormControl" placeholder="DPI" type="number">
+             
+                <mat-error *ngIf="dpiFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong> || unicamente <strong>numeros</strong>
+                </mat-error>
+    
+                
+              </mat-form-field>
+              <mat-form-field color="accent" appearance="fill">
+                <mat-label>Inherited calendar color</mat-label>
+                <input  matInput formControlName="fechaFormControl" id="fechaFormControl" [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                <mat-error *ngIf="fechaFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="edadFormControl" formControlName="edadFormControl" placeholder="Edad" type="number">
+             
+                <mat-error *ngIf="edadFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong> || unicamente <strong>numeros</strong> 
+                </mat-error>
+    
+                
+              </mat-form-field>
+            </mat-card-content>
+            <button type="submit" (click)="crear()" [disabled]="!loginform.valid" mat-raised-button color="primary" class="btn-block">Log in</button>
+          </form>
+        </mat-card>
+      
+      </div>
+    </div>
