@@ -25,6 +25,10 @@ export class ServicioService {
   postUser(form){
     return this.http.post(this.get_domain()+'/registro',form)
 }
+
+postLogin(form){
+  return this.http.post(this.get_domain()+'/login',form)
+}
   message(a,type) { 
 
     Swal.fire({
@@ -43,3 +47,4 @@ export class ServicioService {
 
   }
 }
+

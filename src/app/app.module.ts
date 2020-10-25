@@ -15,7 +15,7 @@ import { MatListModule} from "@angular/material/List";
 import { MatButtonModule} from "@angular/material/Button";
 
 import { RegistroComponent } from './registro/registro.component';
-import { MaterialModule } from './material.module';
+
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
 
@@ -32,13 +32,18 @@ export const DateFormats = {
   },
 };
 
+import { LoginComponent } from './login/login.component';
+
+import { MaterialModule } from './material.module ';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PagarComponent,
     ListadoComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,9 @@ export const DateFormats = {
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: DateFormats }
+    { provide: MAT_DATE_FORMATS, useValue: DateFormats },
+    MaterialModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
