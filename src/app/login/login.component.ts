@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl,FormGroup, FormGroupDirective, NgForm, Validators,FormBuilder} from '@angular/forms';
+import {ServicioService} from '../servicio.service'
 
 import {ErrorStateMatcher} from '@angular/material/core';
 //import Swal from 'sweetalert2'
@@ -35,27 +36,35 @@ export class LoginComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private servicio:ServicioService) { }
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
   
-      //emailFormControl: ['', [Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+      emailFormControl: ['', [Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       passFormControl: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(200)]],
-      userNameFormControl:['', [Validators.required]],
+      //userNameFormControl:['', [Validators.required]],
 
 
     });
   }
 
   ingresar(){
-    let UserName=this.loginform.controls['userNameFormControl'].value;
-    //let email=this.loginform.controls['emailFormControl'].value;
+    //let UserName=this.loginform.controls['userNameFormControl'].value;
+    let email=this.loginform.controls['emailFormControl'].value;
     let pass=this.loginform.controls['passFormControl'].value;
 
 
-    const jsonData={username:UserName,password:pass}
+    const jsonData={correo:email,password:pass}
     console.log(jsonData);
+   
+      this.servicio.postLogin(jsonData).subscribe(data=>{
+        console.log('la api me respondio ',data);
+      },err=>{
+        this.servicio.message('credenciales incorrectas','error');
+      })
+  
+
   }
 
 }

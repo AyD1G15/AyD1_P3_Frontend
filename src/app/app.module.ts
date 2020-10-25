@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 
 import { MaterialModule } from './material.module ';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MaterialModule } from './material.module ';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
