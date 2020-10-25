@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'avatsaev/angular-chrome-headless:alpine-node-12'
+      image 'zenika/alpine-chrome:86-with-node-12'
     }
 
   }
