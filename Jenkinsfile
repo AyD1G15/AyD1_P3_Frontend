@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'docker pull avatsaev/angular-chrome-headless:alpine-node-12'
+      image 'avatsaev/angular-chrome-headless:alpine-node-12'
     }
 
   }
