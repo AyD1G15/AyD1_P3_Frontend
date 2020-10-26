@@ -7,6 +7,7 @@ import { PagarComponent } from './pagar/pagar.component';
 import { ListadoComponent } from './listado/listado.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { DatePipe } from '@angular/common'
 
 
 import {MatInputModule} from '@angular/material/input';
@@ -49,7 +50,9 @@ import { MatRippleModule} from '@angular/material/core';
    MatSelectModule
 
   ],
-  providers: [],
+  providers: [  
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

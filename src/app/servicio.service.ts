@@ -20,6 +20,13 @@ export class ServicioService {
 
     
   }
+
+  postf(form,word){
+    return this.http.post(this.get_domain()+'/'+word,form)
+}
+postPago(form){
+  return this.http.post(this.get_domain()+'/pago',form)
+}
   message(a,type) { 
 
     Swal.fire({

@@ -80,10 +80,10 @@
 
                            <mat-form-field appearance="fill">
 
-                                <select matNativeControl required>
-                                <option value="1">Visa</option>
-                                <option value="2">Master Card</option>
-                                <option value="3">Dinner club</option>
+                                <select matNativeControl [(ngModel)]="card1"  name="card1" required>
+                                <option value="Visa">Visa</option>
+                                <option value="Master Card">Master Card</option>
+                                <option value="Dinner club">Dinner club</option>
                                 </select>
                           </mat-form-field>
 
