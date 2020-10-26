@@ -11,41 +11,21 @@
       <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
 
       <mat-selection-list #user [multiple]="false">
-        <mat-list-option *ngFor="let user of regalo.availability; index as i; first as isFirst" [value]="user.id">
+        <mat-list-option *ngFor="let user of regalo.availability; index as i; first as isFirst" [value]="user">
           id:{{user.id}} total:{{user.total}}
         </mat-list-option>
       </mat-selection-list>
       
       <p>
-        Option selected: {{user.selectedOptions.selected[0]?.value}}
+        <!-- Option selected: {{user.selectedOptions.selected[0]?.value}} -->
       </p>
 
-    <!--<table  >
-      <tr>
-        <td>
-         
-        </td>
-         <td class="espaciad"  >
-        
-            <p>   <li class="espaciad"  *ngFor="let user of regalo.availability; index as i; first as isFirst">
-            
-              <mat-card-actions>
-               
-                <button class="espaciad" mat-button>id:{{user.id}}</button> <button mat-button>total:{{user.total}}</button>
-             
-              </mat-card-actions>
-
-             </li>
-            </p>
-          
-        </td>
-      </tr>
-    </table>-->
-  <!--   <img mat-card-image src="{{regalo.image}}"/> -->
 
       </mat-card-content>
     <mat-card-actions>
-      <button class="bordeado" (click)="Comprar(regalo.id)"  mat-raised-button color="warn">Comprar</button>
+      <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,regalo.name,regalo.chargeRate,regalo.active,regalo.image)"  mat-raised-button color="warn">Comprar</button>
+      <!-- <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,user.selectedOptions.selected[1]?.value)"  mat-raised-button color="warn">Comprar</button> -->
+
     </mat-card-actions>
   </mat-card>
 </div>

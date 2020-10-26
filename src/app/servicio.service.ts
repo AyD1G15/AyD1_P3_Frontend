@@ -22,6 +22,44 @@ export class ServicioService {
     
   }
 
+ 
+
+  datosuser= [
+    {
+        regaloid: "",  
+        idsub:"",
+        total:"",
+        changerate:"",
+        active:"",
+        name:"",
+        img:""
+    }
+  ]
+
+
+  seteardata(regaloid,idsub,total,changerate,active,name,img) { 
+
+    let datosuser1= [
+      {
+        regaloid:regaloid,   
+        idsub: idsub,
+        total:total,
+        changerate:changerate ,
+        active :active,
+        name:name,
+        img:img
+      }] 
+
+      this.datosuser=datosuser1
+
+  }
+
+  get_datosregalo() { 
+
+    return this.datosuser
+    // return aa
+
+  }
   postf(form,word){
     return this.http.post(this.get_domain()+'/'+word,form)
 }

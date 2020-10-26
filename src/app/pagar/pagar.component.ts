@@ -20,7 +20,7 @@ export class PagarComponent implements OnInit {
   tasa
   ngOnInit(): void {
     var id = this.route.snapshot.paramMap.get('id');
-  this. setdata()
+  // this. setdata()
 
 
   this.servicio.getDataget('TasaCambio').subscribe(data=>{
@@ -35,9 +35,35 @@ export class PagarComponent implements OnInit {
 
     });
 
+   /*  regaloid:regaloid,   
+    idsub: idsub,
+    total:total,
+    changerate:changerate ,
+    active :active,
+    name:name */
+    this.data=this.servicio.get_datosregalo()
+
+    if(this.data){
+     this.data.forEach(element => {
+     
+      this.nombre=element.name
+      this.status=element.active
+      this.id=element.regaloid
+      this.notarjeta=""
+      this.charge=element.changerate
+      this.codigov=""
+      this.namcliente=""
+      this.total=element.total
+      this.moneda="Q";
+      this.imagen=element.img
+   
+     }); 
+   
+   }
+
 
   }
-
+  data:any;
   nombre:string=""
   imagen:string="https://media.karousell.com/media/photos/products/2020/5/21/rm50_goggle_play_gift_card_mal_1590040469_c1100b5a_progressive.jpg"
   status:string=""
@@ -60,7 +86,7 @@ export class PagarComponent implements OnInit {
   ];
   setdata(){
     this.nombre="regalo 1"
-
+    
     this.imagen="https://media.karousell.com/media/photos/products/2020/5/21/rm50_goggle_play_gift_card_mal_1590040469_c1100b5a_progressive.jpg"
     this.status="Active"
     this.id="1"
@@ -72,9 +98,49 @@ export class PagarComponent implements OnInit {
     this.moneda="Q";
 
   }
+  detectarerroresnulos(){
+    if(!this.nombre)return false
+    this.show("1")
+    if(!this.status)return false
+    this.show("2")
+      if(!this.id)return false
+    this.show("3")
+        if(!this.notarjeta)return false
+    this.show("4")
+        if(!this.charge)return false
+    this.show("5")
+          if(!this.codigov)return false
+    this.show("6")
+          if(! this.namcliente)return false
+    this.show("7")
+          if(! this.total)return false
+    this.show("8")
+            if(! this.moneda)return false
+    this.show("9")
+            if(! this.imagen)return false
+    this.show("10")
+            if(! this.namcliente)return false
+    this.show("11")
+              if(! this.notarjeta)return false
+    this.show("12")
+                if(! this.card1)return false
+    this.show("13")
+                  if(! this.total)return false
+    this.show("14")
+                    if(! this.codigov)return false
+    this.show("15")
+                      // if(! this.datePipeString)return false
+    this.show("16")
+                        if(! this.moneda)return false
 
+return true
+  }
   Comprar() {
-   console.log("notarjeta es "+this.notarjeta);
+    if(  !this.detectarerroresnulos()) {
+      this.servicio.message("existen valores nulos o vacios, revise","error")
+      return false
+    }
+  console.log("notarjeta es "+this.notarjeta);
    console.log("codigov es "+this.codigov);
    console.log("namcliente es "+this.namcliente);
    console.log("total es "+this.total);

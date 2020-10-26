@@ -27,6 +27,7 @@ export class ListadoComponent implements OnInit {
 
 
 
+
       });
  
 
@@ -43,13 +44,43 @@ export class ListadoComponent implements OnInit {
     throw new Error('fallo seleccion de regalo')
 
   }
+  show(a){
+   console.log(a)
+ 
+ }
 
+  Comprar(regaloid,selecte,name,chargeRate,active,img){
+ this.  show(regaloid+","+JSON.stringify(selecte))
+ let idsub=selecte.id
+ let total=selecte.total
 
-  Comprar(regaloid){
-
+ this.  show(idsub+","+total)
+ this.servicio.seteardata(regaloid,idsub,total,chargeRate,active,name,img);
    // this.servicio.message("el id es "+regaloid,"success")
-
+  /*  
+   seteardata(regaloid,idsub,total,changerate,active,name)  */
     this.servicio.navegar('pagar');
+
+
+
+/*     if(this.regalos[regaloid]){
+ 
+
+    if(this.regalos[regaloid].availability!=null){
+   
+   
+      this.regalos[regaloid].availability.forEach(element => {
+        this.show("element es "+JSON.stringify(element))
+        
+        this.show("id es "+element.id)
+         if(selecte==element.id){
+          this.show("es total es "+element.total)
+        }
+
+       });
+     }
+
+    } */
 
   }
 

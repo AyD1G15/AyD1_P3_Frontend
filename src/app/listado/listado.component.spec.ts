@@ -83,10 +83,7 @@ describe('ListadoComponent', () => {
     
     expect( function(){ 
     
-  
-   
        let result=component.retorno_objecto().subscribe(datu=>{
-
 
         let a={
           "Regalo1": {

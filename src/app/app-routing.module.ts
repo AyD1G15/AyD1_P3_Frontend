@@ -12,7 +12,9 @@ const routes: Routes = [
   {path:'pagar',component:PagarComponent},
   {path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
-  {path:'',component:LoginComponent},
+  // {path:'',component:LoginComponent},
+  {path:'',component:ListadoComponent},
+
 ];
 
 
