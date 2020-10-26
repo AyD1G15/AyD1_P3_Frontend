@@ -1,23 +1,4 @@
-.fam8 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-style: bold    ;
-  }
-
-  .espaciado{
-    margin-top:0px ;
-    margin-bottom:0px ;
-    padding-top: 0px;
-    padding-bottom:0px ;
-  } 
-  
-  .espaciad{
-    margin-left:5px ;
-    padding-left: 5px;
-    background-color: bisque;
-  }
-
-  html,
+html,
 body {
   height: 100%;
   margin: 0;
@@ -60,14 +41,14 @@ body {
   float: left;
   padding: 60px 50px 40px 50px;
   width: 100%;
-  //background: #fff;
-  background: rgb(246, 255, 249);
-  border-radius: 10px;
+  //background: rgb(236, 248, 250);
+  background: rgb(229, 252, 237);
+  border-radius: 30px;
   transform: scale(1);
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   z-index: 5;
-  max-width: 250px;
+  max-width: 330px;
 }
 
 .box.back {
@@ -83,11 +64,11 @@ body {
   content: "";
   width: 100%;
   height: 30px;
-  border-radius: 10px;
+  border-radius: 30px;
   position: absolute;
   top: -10px;
-  background: rgba(255, 255, 255, .6);
-  //background: rgba(220, 221, 220, 0.829);
+  //background: rgba(255, 255, 255, .6);
+  //background: rgb(210, 255, 225);
   left: 0;
   transform: scale(.95);
   -webkit-transform: scale(.95);

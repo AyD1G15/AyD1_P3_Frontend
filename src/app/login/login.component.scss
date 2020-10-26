@@ -1,23 +1,4 @@
-.fam8 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-style: bold    ;
-  }
-
-  .espaciado{
-    margin-top:0px ;
-    margin-bottom:0px ;
-    padding-top: 0px;
-    padding-bottom:0px ;
-  } 
-  
-  .espaciad{
-    margin-left:5px ;
-    padding-left: 5px;
-    background-color: bisque;
-  }
-
-  html,
+html,
 body {
   height: 100%;
   margin: 0;
@@ -67,7 +48,7 @@ body {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   z-index: 5;
-  max-width: 250px;
+  max-width: 330px;
 }
 
 .box.back {

@@ -23,6 +23,27 @@ import { MatButtonModule} from "@angular/material/Button";
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 
+import { RegistroComponent } from './registro/registro.component';
+
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+
+
+export const DateFormats = {
+  parse: {
+      dateInput: ['YYYY-MM-DD']
+  },
+  display: {
+      dateInput: 'YYYY-MM-DD',
+      monthYearLabel: 'MMMM YYYY',
+      dateA11yLabel: 'LL',
+      monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
+
+import { LoginComponent } from './login/login.component';
+
+import { MaterialModule } from './material.module ';
 
 import { MatRippleModule} from '@angular/material/core';
 
@@ -31,7 +52,9 @@ import { MatRippleModule} from '@angular/material/core';
   declarations: [
     AppComponent,
     PagarComponent,
-    ListadoComponent
+    ListadoComponent,
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,12 +70,19 @@ import { MatRippleModule} from '@angular/material/core';
    ReactiveFormsModule,
    MatRippleModule,
    FormsModule,
-   MatSelectModule
+   MatSelectModule,
 
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [  
+  providers: [
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: DateFormats },
+    MaterialModule,
+    HttpClientModule,
     DatePipe
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
