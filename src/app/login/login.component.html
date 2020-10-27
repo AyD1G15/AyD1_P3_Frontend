@@ -1,0 +1,46 @@
+<div class="padre">
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    
+        <mat-card class="box">
+          <mat-card-header>
+            <md-card-avatar>
+                <img src="https://img.icons8.com/bubbles/100/000000/enter-2.png" class="md-user-avatar"/>
+              
+            </md-card-avatar>
+            <mat-card-title>Log in</mat-card-title>
+          </mat-card-header>
+      
+          <form [formGroup]="loginform"  class="example-form">
+            <mat-card-content>
+             
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="emailFormControl" formControlName="emailFormControl" placeholder="Usuario">
+             
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Campo <strong>obligatorio</strong> o <strong>no valido</strong> 
+                </mat-error>
+    
+                
+              </mat-form-field>
+      
+              <mat-form-field class="example-full-width">
+                <input id="passFormControl" formControlName="passFormControl" type="password" matInput placeholder="Password">
+              
+                <mat-error *ngIf="passFormControl.hasError('required')">
+                  <strong>La contraseña debe tener  8 o mas caracteres</strong>
+                </mat-error>
+    
+              </mat-form-field>
+             
+            
+            
+            </mat-card-content>
+            <button type="submit" (click)="ingresar()" [disabled]="!loginform.valid" mat-raised-button color="primary" class="btn-block">Log in</button>
+            <a mat-raised-button routerLink="/registro">Crea tu cuenta!</a>
+  
+          </form>
+        </mat-card>
+      
+      </div>
+    </div>

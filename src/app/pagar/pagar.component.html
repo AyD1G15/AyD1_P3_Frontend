@@ -1,1 +1,201 @@
-<p>pagar works!</p>
+
+
+
+
+
+  <form #f="ngForm"class="go-bottom">
+    <h2></h2>
+    <div>
+      
+    </div>
+    <div>
+      
+    </div>
+    <div>
+    </div>
+  </form>
+  
+  <form class="go-right">
+    <h2>Formulario de pago</h2>
+
+
+    <table  >
+        <tr>
+          <td>
+            <div>
+               Name
+            </div>
+
+         </td>
+          <td>
+            <div>
+            <input name="nombre" [(ngModel)]="nombre" readonly>
+            </div>
+
+         </td>
+        </tr>
+
+
+            <tr>
+                <td>
+                  <div>
+                </div>
+      
+               </td>
+                <td>
+                    <div>
+                        <img mat-card-avatar class="espaciado" height="100px" width="100px" alt="Angular Logo" src="{{imagen}}" >
+                      </div>
+      
+               </td>
+            </tr>
+
+
+                <tr>
+                    <td>
+                      <div>
+                        Status
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input  name="status" [(ngModel)]="status" readonly>
+                          </div>
+          
+                   </td>
+                </tr>
+
+
+                
+                <tr>
+                    <td>
+                      <div>
+                         Tarjeta de credito
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+
+                           <mat-form-field appearance="fill">
+
+                                <select matNativeControl [(ngModel)]="card1"  name="card1" required>
+                                <option value="Visa">Visa</option>
+                                <option value="Master Card">Master Card</option>
+                                <option value="Dinner club">Dinner club</option>
+                                </select>
+                          </mat-form-field>
+
+                          </div>
+          
+                   </td>
+                </tr>
+
+
+
+                
+                <tr>
+                    <td>
+                      <div>
+                         No. de tarjeta
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input name="notarjeta" [(ngModel)]="notarjeta" >
+                          </div>
+          
+                   </td>
+                </tr>
+
+                <tr>
+                    <td>
+                      <div>
+                        Fecha de expiración
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input matInput  [(ngModel)]="startDate" name="startDate" [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                         </div>
+          
+                   </td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                      <div>
+                        Tasa de cambio
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input name="charge" [(ngModel)]="charge" readonly>
+                          </div>
+          
+                   </td>
+                </tr>
+
+                <tr>
+                    <td>
+                      <div>
+                        Codigo de verificación
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input  name="codigov" [(ngModel)]="codigov" >
+                          </div>
+          
+                   </td>
+                </tr>
+
+                <tr>
+                    <td>
+                      <div>
+                          Nombre completo
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input  name="namcliente" [(ngModel)]="namcliente" >
+                          </div>
+          
+                   </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                      <div>
+                        Total
+                      </div>
+          
+                   </td>
+                    <td>
+                        <div>
+                            <input  name="total" [(ngModel)]="total" readonly >
+                          </div>
+          
+                   </td>
+                </tr>
+
+                <button (click)="Comprar()" mat-flat-button color="primary">Pagar</button>
+
+            </table>
+
+
+
+    
+   
+  </form>
