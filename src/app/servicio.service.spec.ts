@@ -1,16 +1,31 @@
-import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 import { ServicioService } from './servicio.service';
 
-describe('ServicioService', () => {
-  let service: ServicioService;
+describe('ServiciosService', () => {
+  beforeEach(async(() =>{TestBed.configureTestingModule({
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ServicioService);
+    imports: [
+      HttpClientTestingModule,
+      RouterTestingModule
+    ],     
+    providers: [
+      RouterTestingModule
+    
+   ]
+     })  }));
+
+
+
+    it('should be created', () => {
+      const service: ServicioService = TestBed.get(ServicioService);
+      expect(service).toBeTruthy();
+    });
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+
+
+

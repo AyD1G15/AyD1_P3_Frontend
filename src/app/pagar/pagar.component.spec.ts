@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {FormControl,FormGroup, FormGroupDirective, NgForm, Validators,FormBuilder} from '@angular/forms';
 
 import { PagarComponent } from './pagar.component';
+import { DatePipe } from '@angular/common'
+import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('PagarComponent', () => {
   let component: PagarComponent;
@@ -8,7 +13,19 @@ describe('PagarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PagarComponent ]
+      declarations: [ PagarComponent ],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ],     
+      providers: [
+        DatePipe,
+        FormBuilder,
+        NgForm
+        
+        
+      
+     ]
     })
     .compileComponents();
   });
