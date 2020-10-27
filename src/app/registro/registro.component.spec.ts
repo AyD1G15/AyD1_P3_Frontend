@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegistroComponent } from './registro.component';
+import {FormControl,FormGroup, FormGroupDirective, NgForm, Validators,FormBuilder} from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
 
 describe('RegistroComponent', () => {
   let component: RegistroComponent;
@@ -9,6 +12,21 @@ describe('RegistroComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ RegistroComponent ]
+      ,      
+      providers: [
+        FormBuilder
+        
+     ],
+     imports: [
+      // HttpClientTestingModule,
+      RouterTestingModule,
+      HttpClientTestingModule
+
+
+      // MatPaginator, MatSort
+    ]
+
+    ,     
     })
     .compileComponents();
   });

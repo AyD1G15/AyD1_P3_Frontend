@@ -71,7 +71,6 @@ import { MatRippleModule} from '@angular/material/core';
    MatRippleModule,
    FormsModule,
    MatSelectModule,
-
     MaterialModule,
     HttpClientModule
   ],
