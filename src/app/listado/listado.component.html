@@ -1,4 +1,7 @@
-<div *ngFor="let regalo of regalos">
+
+
+
+<div *ngFor="let regalo of regalos;let i=index">
 
 <div class="content">
   <mat-card class="box">
@@ -15,7 +18,12 @@
           id:{{user.id}} total:{{user.total}}
         </mat-list-option>
       </mat-selection-list>
-      
+      <mat-card-content>
+
+      <ng-number-picker class="bordeado"[(value)]="a[i]"></ng-number-picker>
+
+    </mat-card-content>
+
       <p>
         <!-- Option selected: {{user.selectedOptions.selected[0]?.value}} -->
       </p>
@@ -23,7 +31,7 @@
 
       </mat-card-content>
     <mat-card-actions>
-      <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,regalo.name,regalo.chargeRate,regalo.active,regalo.image)"  mat-raised-button color="warn">Comprar</button>
+      <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,regalo.name,regalo.chargeRate,regalo.active,regalo.image,a[i])"  mat-raised-button color="warn">Comprar</button>
       <!-- <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,user.selectedOptions.selected[1]?.value)"  mat-raised-button color="warn">Comprar</button> -->
 
     </mat-card-actions>

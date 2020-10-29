@@ -30,13 +30,14 @@ export class ListadoComponent implements OnInit {
 
       });
  
-
+      
+      for(var x = 0; x < 100; x++)
+          this.a.push(1);
   }
 
-  
+  a = new Array();
   retorno_objecto(){
      return this.http.get('./../listado/archivo.json');
-
   }
 
   elegir(idregalo,idusuario,number,nombre,fechaexp){
@@ -49,18 +50,28 @@ export class ListadoComponent implements OnInit {
  
  }
 
-  Comprar(regaloid,selecte,name,chargeRate,active,img){
+  Comprar(regaloid,selecte,name,chargeRate,active,img,cantidad){
+    this.  show("cantidad es "+cantidad)
+    if(!selecte){this.servicio.message("Debe elegir un tipo de id de regalo","error")
+    return 
+    }
+
  this.  show(regaloid+","+JSON.stringify(selecte))
  let idsub=selecte.id
  let total=selecte.total
+ if(cantidad>total){this.servicio.message("La cantidad de regalos("+cantidad+") no puede ser mayor que la disponible ("+total+")","error")
+return 
+}
 
- this.  show(idsub+","+total)
+this.servicio.agregar(regaloid,idsub,cantidad,chargeRate,active,name,img)
+this.servicio.message("La tarjeta de regalo fue agregada correctamente","success")
+ 
+// return
+ /* this.  show(idsub+","+total)
  this.servicio.seteardata(regaloid,idsub,total,chargeRate,active,name,img);
-   // this.servicio.message("el id es "+regaloid,"success")
-  /*  
-   seteardata(regaloid,idsub,total,changerate,active,name)  */
-    this.servicio.navegar('pagar');
 
+    this.servicio.navegar('pagar');
+ */
 
 
 /*     if(this.regalos[regaloid]){

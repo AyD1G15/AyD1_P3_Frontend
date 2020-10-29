@@ -20,53 +20,12 @@
 
 
     <table  >
-        <tr>
-          <td>
-            <div>
-               Name
-            </div>
-
-         </td>
-          <td>
-            <div>
-            <input name="nombre" [(ngModel)]="nombre" readonly>
-            </div>
-
-         </td>
-        </tr>
+        
 
 
-            <tr>
-                <td>
-                  <div>
-                </div>
-      
-               </td>
-                <td>
-                    <div>
-                        <img mat-card-avatar class="espaciado" height="100px" width="100px" alt="Angular Logo" src="{{imagen}}" >
-                      </div>
-      
-               </td>
-            </tr>
+           
 
-
-                <tr>
-                    <td>
-                      <div>
-                        Status
-                      </div>
-          
-                   </td>
-                    <td>
-                        <div>
-                            <input  name="status" [(ngModel)]="status" readonly>
-                          </div>
-          
-                   </td>
-                </tr>
-
-
+               
                 
                 <tr>
                     <td>
@@ -129,7 +88,7 @@
 
 
 
-                <tr>
+              <!--   <tr>
                     <td>
                       <div>
                         Tasa de cambio
@@ -143,7 +102,7 @@
           
                    </td>
                 </tr>
-
+ -->
                 <tr>
                     <td>
                       <div>
@@ -172,10 +131,10 @@
                           </div>
           
                    </td>
-                </tr>
+                </tr> 
 
 
-                <tr>
+               <!--  <tr>
                     <td>
                       <div>
                         Total
@@ -188,7 +147,7 @@
                           </div>
           
                    </td>
-                </tr>
+                </tr> -->
 
                 <button (click)="Comprar()" mat-flat-button color="primary">Pagar</button>
 

@@ -32,7 +32,15 @@ body {
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
 }
+.mat1 {
 
+  border-radius: 2%;
+  background-color: aqua;
+  }
+.bordeado {
+
+  padding: 2%;
+  }
 .app-header {
   justify-content: space-between;
   position: fixed;

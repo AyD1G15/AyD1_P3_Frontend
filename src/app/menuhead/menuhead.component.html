@@ -1,0 +1,44 @@
+<mat-card-header>
+    <img  alt="Angular Logo" style="height: 170px; width:250px;" src="    https://www.xenonfactory.es/wp-content/uploads/2019/01/carrito-compras-desarrollo-tienda-virtual.png" >
+    <mat-card-title><div syle="color:white;">Carrito de compras</div></mat-card-title>
+
+</mat-card-header>
+
+<br>
+<div *ngFor="let regalo of obj;let i=index">
+
+    <div class="content">
+      <mat-card class="box">
+        <mat-card-header>
+          <mat-card-title>{{regalo.idregalo}}.{{regalo.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img  alt="Angular Logo" style="height: 150px; width: 150px;" src="{{regalo.img}}" >
+          <mat-card-title><div class="fam8" >chargeRate:{{regalo.chargeRate}}</div></mat-card-title>
+          <mat-card-title><div class="fam8" >active:{{regalo.active}}</div></mat-card-title>
+    
+          <mat-card-title><div class="fam8" >avaliavility:{{regalo.avaliavi}}</div></mat-card-title>
+
+          <mat-card-content>
+    
+            <mat-card-title><div class="fam8" >Numero de tarjetas:{{regalo.cantiti}}</div></mat-card-title>
+    
+        </mat-card-content>
+    
+          <p>
+            <!-- Option selected: {{user.selectedOptions.selected[0]?.value}} -->
+          </p>
+    
+    
+          </mat-card-content>
+        <mat-card-actions>
+          <!-- <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,user.selectedOptions.selected[1]?.value)"  mat-raised-button color="warn">Comprar</button> -->
+          <button class="bordeado" (click)="eliminar(regalo.idregalo)"  mat-raised-button color="warn">Eliminar del carro</button>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    
+    </div>
+    
+    <button class="bordeado" (click)="Procesar()"  mat-raised-button color="primary">Procesar transaccion</button>
