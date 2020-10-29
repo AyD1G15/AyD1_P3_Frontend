@@ -27,8 +27,16 @@ import { RegistroComponent } from './registro/registro.component';
 
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import {NumberPickerModule} from 'ng-number-picker';
 
-
+/* import { 
+  MatTooltipModule,
+  MatToolbarModule
+} from '@angular/material';
+ */
 export const DateFormats = {
   parse: {
       dateInput: ['YYYY-MM-DD']
@@ -46,6 +54,8 @@ import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material.module ';
 
 import { MatRippleModule} from '@angular/material/core';
+import { MenuheadComponent } from './menuhead/menuhead.component';
+import { NewComponentComponent } from './new-component/new-component.component';
 
 
 @NgModule({
@@ -54,7 +64,10 @@ import { MatRippleModule} from '@angular/material/core';
     PagarComponent,
     ListadoComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    MenuheadComponent,
+    NewComponentComponent
+
   ],
   imports: [
     BrowserModule,
@@ -65,6 +78,9 @@ import { MatRippleModule} from '@angular/material/core';
     MatListModule,
     MatCardModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatTooltipModule,
+MatToolbarModule,
     MatDatepickerModule,
    MatNativeDateModule ,
    ReactiveFormsModule,
@@ -72,7 +88,8 @@ import { MatRippleModule} from '@angular/material/core';
    FormsModule,
    MatSelectModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    NumberPickerModule
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

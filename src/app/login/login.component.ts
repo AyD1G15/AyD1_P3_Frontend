@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
    
       this.servicio.postLogin(jsonData).subscribe(data=>{
         console.log('la api me respondio ',data);
+        this.servicio.setearparametros(data)
         this.router.navigate(['/listado']);
       },err=>{
         this.servicio.message('credenciales incorrectas','error');

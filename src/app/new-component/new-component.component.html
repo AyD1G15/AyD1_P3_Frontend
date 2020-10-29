@@ -1,0 +1,41 @@
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="shouldRun">
+    <mat-toolbar color="light" class="example-toolbar">
+        <div class="center" >
+            <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+
+          </div>
+      
+      <h1 class="example-app-name" routerLink="/listado">Sistema</h1>
+      
+ 
+ <!-- <div class="container text-right"> -->
+ 
+<!-- </div> -->
+        <mat-sidenav mode=side #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+        <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">
+        <mat-icon>{{nav.icon}}</mat-icon>
+        {{nav.name}}</a>
+
+        </mat-nav-list>
+        </mat-sidenav>
+
+       
+
+      
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+     
+  
+
+      <mat-sidenav-content>
+        <div style="background-image:url('https://i.pinimg.com/originals/bf/ae/cf/bfaecf75f0580f314988c0bece2a31b1.png')">
+        <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
