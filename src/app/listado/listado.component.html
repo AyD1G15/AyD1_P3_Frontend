@@ -15,7 +15,33 @@
 
       <mat-selection-list #user [multiple]="false">
         <mat-list-option *ngFor="let user of regalo.availability; index as i; first as isFirst" [value]="user">
-          id:{{user.id}} total:{{user.total}}
+          
+
+          
+          <table class="centeri" >
+            <thead>
+                <tr>
+                    <th></th>
+                    <!-- more columns are possible -->
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> id:{{user.id}}</td>
+                    <td>total:{{user.total}}</td>
+
+                    <!-- more columns are possible -->
+                </tr>
+               
+                <!-- more rows are possible -->
+            </tbody>
+            <tfoot><!-- optional -->
+                <tr>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
         </mat-list-option>
       </mat-selection-list>
       <mat-card-content>

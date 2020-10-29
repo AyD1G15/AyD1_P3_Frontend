@@ -1,0 +1,69 @@
+
+          <mat-card-title><div class="fam8" >Mis tarjetas</div></mat-card-title>
+
+<div *ngFor="let regalo of regalos;let i=index">
+
+    <div class="content">
+      <mat-card class="box">
+        <mat-card-header>
+          <!-- <mat-card-title>{{regalo._id}}</mat-card-title> -->
+        </mat-card-header>
+        <mat-card-content>
+          <!-- <img  alt="Angular Logo" style="height: 150px; width: 150px;" src="{{regalo.image}}" > -->
+          <mat-card-title><div class="fam8" >ExchangeRate:{{regalo.exchangeRate}}</div></mat-card-title>
+          <mat-card-title><div class="fam8" >Status:{{regalo.status}}</div></mat-card-title>
+    
+          <mat-selection-list #user [multiple]="false">
+            <mat-list-option *ngFor="let user of regalo.items; index as i; first as isFirst" [value]="user">
+                  
+           
+                <table class="center" >
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <!-- more columns are possible -->
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>plataform:{{user.plataform}}</td>
+                            <td>availability:{{user.availability}}</td>
+                            <td>cantidad:{{user.quantity}}</td>
+
+                            <!-- more columns are possible -->
+                        </tr>
+                       
+                        <!-- more rows are possible -->
+                    </tbody>
+                    <tfoot><!-- optional -->
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+           
+            </mat-list-option>
+          </mat-selection-list>
+          <mat-card-content>
+    
+          <!-- <ng-number-picker class="bordeado"[(value)]="a[i]"></ng-number-picker> -->
+    
+        </mat-card-content>
+    
+
+       
+          <p>
+            <!-- Option selected: {{user.selectedOptions.selected[0]?.value}} -->
+          </p>
+    
+    
+          </mat-card-content>
+        <mat-card-actions>
+          <button class="bordeado" (click)="Enviar(regalo)"  mat-raised-button color="primary">Enviar a alguien</button>
+          <!-- <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,user.selectedOptions.selected[1]?.value)"  mat-raised-button color="warn">Comprar</button> -->
+    
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    
+    </div>

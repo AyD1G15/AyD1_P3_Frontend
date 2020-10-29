@@ -14,6 +14,12 @@ export class ServicioService {
   getDataget(name){
     return this.http.get(this.get_domain()+'/'+name)
   }
+  gethistory(id){
+    console.log('/history es'); 
+    console.log(this.get_domain()+'/history/'+id); 
+
+    return this.http.get(this.get_domain()+'/history/'+id)
+  }
   get_domain() { 
 
     //return "https://learn-287403.uc.r.appspot.com"
@@ -118,6 +124,7 @@ cerrarsesion(){
 
 namelogueado=""
 setearparametros(msg){
+  console.log("el msg es "+JSON.stringify(msg))   
 
   let datosuser1=null
 
@@ -160,6 +167,8 @@ setearparametros(msg){
 
   }
 
+
+
   message(a,type) { 
 
     Swal.fire({
@@ -169,7 +178,7 @@ setearparametros(msg){
       confirmButtonText: 'Cool'
     })
   }
-
+ 
   navegar(urlnav){
  
     // this.router.navigate(['ver-pregunta',id]);

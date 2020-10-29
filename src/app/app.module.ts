@@ -56,6 +56,8 @@ import { MaterialModule } from './material.module ';
 import { MatRippleModule} from '@angular/material/core';
 import { MenuheadComponent } from './menuhead/menuhead.component';
 import { NewComponentComponent } from './new-component/new-component.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+// import {MatGridListModule} from '@angular/material/grid-list'
 
 
 @NgModule({
@@ -66,7 +68,8 @@ import { NewComponentComponent } from './new-component/new-component.component';
     RegistroComponent,
     LoginComponent,
     MenuheadComponent,
-    NewComponentComponent
+    NewComponentComponent,
+    PedidosComponent
 
   ],
   imports: [
@@ -90,6 +93,7 @@ MatToolbarModule,
     MaterialModule,
     HttpClientModule,
     NumberPickerModule
+
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

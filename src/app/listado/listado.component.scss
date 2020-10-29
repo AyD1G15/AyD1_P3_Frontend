@@ -23,7 +23,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.centeri {
+  background-color: rgb(185, 221, 204);
+  tr:nth-child(even) {background: rgb(162, 168, 190)}
+  tr:nth-child(odd) {background: #FFF}
 
+}
 body {
   background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
   background-position: center;

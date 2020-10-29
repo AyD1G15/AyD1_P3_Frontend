@@ -5,6 +5,7 @@ import { PagarComponent } from '../app/pagar/pagar.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { MenuheadComponent } from './menuhead/menuhead.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 
 
@@ -14,7 +15,10 @@ const routes: Routes = [
   {path:'registro',component:RegistroComponent},
   {path:'login',component:LoginComponent},
   {path:'carro',component:MenuheadComponent},
+  {path:'pedidos',component:PedidosComponent},
+  
   {path:'',component:ListadoComponent},
+
 
 ];
 
