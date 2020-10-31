@@ -36,7 +36,7 @@ export class InventoryComponent implements OnInit {
     */
      }); 
       }
-      this.iduser="5f950dc9191d602c64f42b27"
+      // this.iduser="5f950dc9191d602c64f42b27"
 
     this.servicio.getinventory(this.iduser).subscribe(data=>{
       console.log('data es'+data);
