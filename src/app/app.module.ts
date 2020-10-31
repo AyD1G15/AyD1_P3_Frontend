@@ -57,6 +57,7 @@ import { MatRippleModule} from '@angular/material/core';
 import { MenuheadComponent } from './menuhead/menuhead.component';
 import { NewComponentComponent } from './new-component/new-component.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { InventoryComponent } from './inventory/inventory.component';
 // import {MatGridListModule} from '@angular/material/grid-list'
 
 
@@ -69,7 +70,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     LoginComponent,
     MenuheadComponent,
     NewComponentComponent,
-    PedidosComponent
+    PedidosComponent,
+    InventoryComponent
 
   ],
   imports: [

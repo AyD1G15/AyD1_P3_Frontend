@@ -20,6 +20,14 @@ export class ServicioService {
 
     return this.http.get(this.get_domain()+'/history/'+id)
   }
+
+  getinventory(id){
+   // console.log('/inventory es'); 
+    console.log(this.get_domain()+'/inventory/'+id); 
+
+    return this.http.get(this.get_domain()+'/inventory/'+id)
+  }
+
   get_domain() { 
 
     //return "https://learn-287403.uc.r.appspot.com"

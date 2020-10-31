@@ -1,0 +1,85 @@
+<mat-card-content>
+
+    <!-- <img  alt="Angular Logo" style="height: 150px; width: 150px;" src="{{regalo.image}}" > -->
+    <mat-card-title><div >TRANSACCIONES</div></mat-card-title>
+    
+</mat-card-content>
+
+         
+         
+         <mat-card-title><div class="fam8" >Mis tarjetas</div></mat-card-title>
+
+          <div *ngFor="let regalo of transacciones;let i=index">
+          
+              <div class="content">
+                <mat-card class="box">
+                  <mat-card-header>
+                    <!-- <mat-card-title>{{regalo._id}}</mat-card-title> -->
+                  </mat-card-header>
+                  <mat-card-content>
+                    <img  alt="Angular Logo" style="height: 150px; width: 150px;" src="{{regalo.image}}" >
+
+                    <!-- <img  alt="Angular Logo" style="height: 150px; width: 150px;" src="{{regalo.image}}" > -->
+                    <mat-card-title><div class="fam8" >UserId:{{regalo.userId}}</div></mat-card-title>
+                    <mat-card-title><div class="fam8" >{{regalo.plataformName}} </div></mat-card-title>
+              
+                    <mat-selection-list #user [multiple]="false">
+                            
+                     
+                          <table class="center" >
+                              <thead>
+                                  <tr>
+                                      <th></th>
+                                      <!-- more columns are possible -->
+                              </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>availability:{{regalo.availability}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td>value:{{regalo.value}}</td>
+                                 </tr>
+                                  <tr>
+                                      <td>PlataformId:{{regalo.PlataformId}}</td>
+                                  </tr>
+                                   <tr>
+                                      <td>saleId:{{regalo.saleId}}</td>
+                                   </tr>
+
+                                      
+                                      <!-- more columns are possible -->
+                                 
+                                 
+                                  <!-- more rows are possible -->
+                              </tbody>
+                              <tfoot><!-- optional -->
+                                  <tr>
+                                      <td></td>
+                                  </tr>
+                              </tfoot>
+                          </table>
+                     
+                    </mat-selection-list>
+                    <mat-card-content>
+              
+                    <!-- <ng-number-picker class="bordeado"[(value)]="a[i]"></ng-number-picker> -->
+              
+                  </mat-card-content>
+              
+          
+                 
+                    <p>
+                      <!-- Option selected: {{user.selectedOptions.selected[0]?.value}} -->
+                    </p>
+              
+              
+                    </mat-card-content>
+                  <mat-card-actions>
+                    <!-- <button class="bordeado" (click)="Comprar(regalo.id,user.selectedOptions.selected[0]?.value,user.selectedOptions.selected[1]?.value)"  mat-raised-button color="warn">Comprar</button> -->
+              
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+              
+              </div>

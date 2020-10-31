@@ -31,6 +31,7 @@ private _mobileQueryListener: () => void;
     {name:"Carro",route:"carro",icon:"shopping_cart"},
     {name:"Pagar",route:"pagar",icon:"request_quote"}, 
     {name:"Mis compras",route:"pedidos",icon:"local_mall"},
+    {name:"Transacciones",route:"inventory",icon:"dns"},
     {name:"Registro",route:"registro",icon:"face"},    
     {name:"Salir",route:"login",icon:"account_circle"},
   ]
