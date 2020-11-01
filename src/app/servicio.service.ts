@@ -27,7 +27,7 @@ export class ServicioService {
 
     return this.http.get(this.get_domain()+'/inventory/'+id)
   }
-
+ 
   get_domain() { 
 
     //return "https://learn-287403.uc.r.appspot.com"
@@ -122,7 +122,8 @@ cerrarsesion(){
         id:null,   
         image:"",
         name:"",
-        correo: ""
+        correo: "",
+        esadmin:false
     }] 
     this.datosuser=datosuser1
     this.namelogueado=""
@@ -151,7 +152,8 @@ setearparametros(msg){
             id:element._id,   
             image: imagendefinida,
             name:element.nombre+" "+element.apellido,
-            correo: element.correo
+            correo: element.correo,
+            esadmin:true
         }] 
         this.namelogueado=element.nombre+" "+element.apellido
 

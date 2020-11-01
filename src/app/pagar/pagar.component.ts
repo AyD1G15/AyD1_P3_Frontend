@@ -40,6 +40,10 @@ if(this.datauser){
 */
  }); 
   }
+
+
+  // this.iduser="5f950dc9191d602c64f42b27"
+
 }
   tasa
   ngOnInit(): void {

@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,private servicio:ServicioService,private router:Router) { }
 
   ngOnInit(): void {
+
+    this.servicio.cerrarsesion()
     this.loginform = this.fb.group({
   
       emailFormControl: ['', [Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],

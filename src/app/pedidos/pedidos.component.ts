@@ -42,6 +42,7 @@ export class PedidosComponent implements OnInit {
     if(this.datauser){
      this.datauser.forEach(element => {
        this.iduser=element.id
+
     /*    this.username=element.correo
       this.name=element.name
       this.imagen=element.image
