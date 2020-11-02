@@ -20,7 +20,12 @@ export class ServicioService {
 
     return this.http.get(this.get_domain()+'/history/'+id)
   }
-
+  
+  getinventoryad(id){
+    // console.log('/inventory es'); 
+ 
+     return this.http.get(this.get_domain()+'/admin/history/'+id)
+   }
   getinventory(id){
    // console.log('/inventory es'); 
     console.log(this.get_domain()+'/inventory/'+id); 
