@@ -68,7 +68,6 @@ export class LoginComponent implements OnInit {
         this.servicio.message('credenciales incorrectas','error');
       })
   
-
   }
 
 }

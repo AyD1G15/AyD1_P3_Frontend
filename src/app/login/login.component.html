@@ -27,7 +27,7 @@
               <mat-form-field class="example-full-width">
                 <input id="passFormControl" formControlName="passFormControl" type="password" matInput placeholder="Password">
               
-                <mat-error *ngIf="passFormControl.hasError('required')">
+                <mat-error id="password" *ngIf="passFormControl.hasError('required')">
                   <strong>La contraseña debe tener  8 o mas caracteres</strong>
                 </mat-error>
     

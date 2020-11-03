@@ -8,32 +8,42 @@ const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
  * @type { import("protractor").Config }
  */
 exports.config = {
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
   allScriptsTimeout: 11000,
   specs: [
-    './src/**/*.e2e-spec.ts'
+    './src/features/**/*.feature'
   ],
   capabilities: {
-    browserName: 'chrome',
-    'chromeOptions': {
-      'args': ['--no-sandbox', '--headless', '--window-size=1024,768']
-    }
+    'browserName': 'chrome',
+    "chromeOptions": {
+      "args": [
+        '--no-sandbox',
+        '--headless',
+        '--disable-gpu',
+        '--window-size=800,600'
+      ],
+      binary: "C:/Program Files/Google/Chrome/Application/chrome.exe"
+    },
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
-  jasmineNodeOpts: {
+  framework: 'custom',
+  cucumberOpts: {
+    require: ['./src/steps/**/*.steps.ts'],
+  },
+  /*jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
     print: function() {}
-  },
+  },*/
   onPrepare() {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({
+    /*jasmine.getEnv().addReporter(new SpecReporter({
       spec: {
         displayStacktrace: StacktraceOption.PRETTY
       }
-    }));
+    }));*/
   }
 };
