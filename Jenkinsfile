@@ -21,7 +21,7 @@ npm install'''
 
     stage('e2e testing') {
       steps {
-        sh './node_modules/@angular/cli/bin/ng e2e --protractorConfig=protractor-ci.conf.js'
+        sh './node_modules/@angular/cli/bin/ng e2e --protractorConfig=e2e/protractor-ci.conf.js'
       }
     }
 
