@@ -6,6 +6,6 @@ export class LoginPage {
   }
 
   getPasswordText() {
-    return element(by.id('app-login password')).getText() as Promise<string>;
+    return element(by.id('app-login passFormControl')).sendKeys('fsasdfsdfd') as Promise<any>;
   }
 }
