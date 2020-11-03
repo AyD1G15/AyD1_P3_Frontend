@@ -34,7 +34,7 @@ describe('ListadoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Parametros invalidos o nulos', () => {
+  /*it('Parametros invalidos o nulos', () => {
     expect( function(){ 
 
 
