@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.servicio.cerrarsesion()
     this.loginform = this.fb.group({
   
-      emailFormControl: ['', [Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+      emailFormControl: ['', [Validators.required,/*Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")*/]],
       passFormControl: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(200)]],
       //userNameFormControl:['', [Validators.required]],
 
