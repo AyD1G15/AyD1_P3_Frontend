@@ -11,15 +11,15 @@ import { DatePipe } from '@angular/common'
 
 
 import {MatInputModule} from '@angular/material/input';
-import { MatCardModule} from "@angular/material/Card";
+//import { MatCardModule} from "@angular/material/Card";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 /* import {MatNativeDateModule} from '@angular/material/nativeDateModule';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
  */
 import { MatNativeDateModule } from '@angular/material/core';
 
-import { MatListModule} from "@angular/material/List";
-import { MatButtonModule} from "@angular/material/Button";
+//import { MatListModule} from "@angular/material/List";
+//import { MatButtonModule} from "@angular/material/Button";
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
 
@@ -80,9 +80,9 @@ import { InventoryComponent } from './inventory/inventory.component';
     BrowserAnimationsModule,
     MatInputModule,
     HttpClientModule,
-    MatListModule,
-    MatCardModule,
-    MatButtonModule,
+    //MatListModule,
+   // MatCardModule,
+    //MatButtonModule,
     MatSidenavModule,
     MatTooltipModule,
 MatToolbarModule,
